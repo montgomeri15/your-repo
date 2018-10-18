@@ -5,9 +5,14 @@
         <members>CalloutJobAdvertisement</members>
         <members>CalloutJobAdvertisementMock</members>
         <members>CalloutJobAdvertisementTest</members>
+        <members>PositionButtonsController</members>
         <members>PositionHelper</members>
         <members>aws_PositionHelper</members>
         <name>ApexClass</name>
+    </types>
+    <types>
+        <members>PositionButtonsVF</members>
+        <name>ApexPage</name>
     </types>
     <types>
         <members>PositionTrigger</members>
@@ -32,6 +37,7 @@
         <members>Position__c.Operating_Systems__c</members>
         <members>Position__c.Pay_Grade__c</members>
         <members>Position__c.Phone__c</members>
+        <members>Position__c.Post_Status__c</members>
         <members>Position__c.Programming_Languages__c</members>
         <members>Position__c.Related_Position__c</members>
         <members>Position__c.Salary_Range__c</members>
@@ -43,6 +49,13 @@
         <members>Settings__c.SecurityToken__c</members>
         <members>Settings__c.Username__c</members>
         <name>CustomField</name>
+    </types>
+    <types>
+        <members>Get_All_Applications</members>
+        <members>Post_Application_to_Site</members>
+        <members>Remove_Application_from_Site</members>
+        <members>Update_Application</members>
+        <name>CustomLabel</name>
     </types>
     <types>
         <members>Interviewer__c</members>

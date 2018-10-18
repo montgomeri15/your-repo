@@ -375,6 +375,31 @@
         <type>Phone</type>
     </fields>
     <fields>
+        <fullName>Post_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Post Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Posted</fullName>
+                    <default>false</default>
+                    <label>Posted</label>
+                </value>
+                <value>
+                    <fullName>Not posted</fullName>
+                    <default>true</default>
+                    <label>Not posted</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Programming_Languages__c</fullName>
         <externalId>false</externalId>
         <label>Programming Languages</label>
@@ -695,6 +720,17 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Post_Status__c</picklist>
+            <values>
+                <fullName>Not posted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Posted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Programming_Languages__c</picklist>
             <values>
                 <fullName>%2ENet</fullName>
@@ -909,6 +945,17 @@
             </values>
             <values>
                 <fullName>S-400</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Post_Status__c</picklist>
+            <values>
+                <fullName>Not posted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Posted</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

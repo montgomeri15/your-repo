@@ -1,0 +1,21 @@
+<apex:page standardController="Position__c" extensions="PositionButtonsController" lightningStylesheets="true" showheader="false" sidebar="false">
+    <apex:messages style="color: red" />
+    <apex:form >
+        <apex:pageBlock mode="maindetail" >
+            <div class="statusHeader">  
+            	<apex:pageBlockSection id="pgblckStatus"  >     
+                	<apex:outputText label="Status:   " value="{!positionStatus}" />
+            	</apex:pageBlockSection>
+        	</div>
+            <apex:pageBlockSection columns="3">
+                    <apex:commandButton style="margin: 10px 0px;" value="{!$Label.Get_All_Applications}" action="{!getJobAdvertisement}" />
+                    <apex:commandButton style="margin: 10px 0px;" value="{!$Label.Post_Application_to_Site}" action="{!postJobAdvertisement}" rendered="{!positionStatus!='Posted'}" />
+                    <apex:commandButton style="margin: 10px 0px;" value="{!$Label.Remove_Application_from_Site}" action="{!deleteJobAdvertisement}" rendered="{!positionStatus!='Not posted'}"/>
+                    <apex:commandButton style="margin: 10px 0px;" value="{!$Label.Update_Application}" action="{!updateJobAdvertisement}" rendered="{!positionStatus!='Not posted'}"/>
+            </apex:pageBlockSection>
+            <div style="text-align:center;font-size: 14px;color : #FF0000">
+                <apex:outputText style="margin: 10px 0px;" value="{!statusMessage}"/>
+            </div>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

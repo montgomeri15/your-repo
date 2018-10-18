@@ -24,7 +24,7 @@ public class CalloutJobAdvertisement {
         HttpRequest ourRequest = new HttpRequest();
         ourRequest.setBody(requestBody);
 		ourRequest.setMethod(service);
-    	ourRequest.setEndpoint(/*System.Label.Job_Advertisement_URL + */'https://ap.salesforce.com/services/oauth2/token');  //Стандартная ссылка для токена
+    	ourRequest.setEndpoint('https://ap.salesforce.com/services/oauth2/token');  //Стандартная ссылка для токена
         return ourRequest;
     }
     
@@ -34,7 +34,7 @@ public class CalloutJobAdvertisement {
         finalRequest.setHeader('Content-Type','application/json');
         finalRequest.setHeader('accept','application/json');
   		finalRequest.setMethod(method);
-        finalRequest.setEndpoint(/*System.Label.Job_Advertisement_URL + */'https://ap.salesforce.com/services/apexrest/jobAdvertisementEndpoint/' + endpointUrl);
+        finalRequest.setEndpoint('https://ap.salesforce.com/services/apexrest/jobAdvertisementEndpoint/' + endpointUrl);
 		return finalRequest;
 	}
     
@@ -79,8 +79,8 @@ public class CalloutJobAdvertisement {
 
 		if(objAuthenticationInfo.ACCESS_TOKEN != null){
             Position__c ourPosition = [SELECT Id, Name, Location__c, Job_Description__c, Salary_Range__c, Skills_Required__c, Education__c,
-                     	   Hiring_Manager__r.Name, Email__c, Phone__c, Status__c
-                     	   FROM Position__c WHERE Id =: positionId];
+                     	   			   Hiring_Manager__r.Name, Email__c, Phone__c, Status__c
+                     	   			   FROM Position__c WHERE Id =: positionId];
             HttpRequest finalRequest = finalHttpRequest(objAuthenticationInfo.ACCESS_TOKEN, 'POST', '');
             finalRequest.setBody(GenerateJSON(ourPosition));
             HttpResponse finalResponse = ourHttp.send(finalRequest);

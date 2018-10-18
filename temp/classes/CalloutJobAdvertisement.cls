@@ -79,8 +79,8 @@ public class CalloutJobAdvertisement {
 
 		if(objAuthenticationInfo.ACCESS_TOKEN != null){
             Position__c ourPosition = [SELECT Id, Name, Location__c, Job_Description__c, Salary_Range__c, Skills_Required__c, Education__c,
-                     	   Hiring_Manager__r.Name, Email__c, Phone__c, Status__c
-                     	   FROM Position__c WHERE Id =: positionId];
+                     	   			   Hiring_Manager__r.Name, Email__c, Phone__c, Status__c
+                     	   			   FROM Position__c WHERE Id =: positionId];
             HttpRequest finalRequest = finalHttpRequest(objAuthenticationInfo.ACCESS_TOKEN, 'POST', '');
             finalRequest.setBody(GenerateJSON(ourPosition));
             HttpResponse finalResponse = ourHttp.send(finalRequest);
